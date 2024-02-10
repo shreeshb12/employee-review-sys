@@ -7,7 +7,6 @@ const expressLayout = require('express-ejs-layouts');
 
 // requring DataBase
 const db = require('./config/mongoose');
-
 const bodyParser = require('body-parser');
 
 // Creating session
@@ -19,7 +18,7 @@ const passportLocal = require('./config/passport-local');
 const MongoStore = require('connect-mongo');
 
 // they are used for showing action notifications
-const flash = require('connect-flash'); 
+const flash = require('connect-flash');
 const flashMiddleWare = require('./config/flashMiddleware');
 
 // For getting the output from req.body(it will parse the upcoming request to String or Arrays).
@@ -44,7 +43,7 @@ app.use(session({
         maxAge: (1000 * 60 * 100)
     },
     store: MongoStore.create({
-        mongoUrl: 'mongodb+srv://whiteWolff:praduman@cluster0.an8uy3k.mongodb.net/ERS?retryWrites=true&w=majority',
+        mongoUrl: 'mongodb+srv://shreeshbadiger12:shreesh12@cluster0.qt6xfr2.mongodb.net/?retryWrites=true&w=majority',
         autoRemove: 'disabled'
     },
         (err) => {
