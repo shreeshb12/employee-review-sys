@@ -1,6 +1,7 @@
 const express = require('express'); // requiring express, 
 const port = 8000; // assigning port, so that I can try and test as this post,
 const app = express(); 
+const path=require('path');
 
 // requiring express-ejs-layout, it will help in rendering the page.
 const expressLayout = require('express-ejs-layouts');
@@ -24,11 +25,11 @@ const flashMiddleWare = require('./config/flashMiddleware');
 // For getting the output from req.body(it will parse the upcoming request to String or Arrays).
 app.use(bodyParser.urlencoded({extended:false}));
 // For using the file in assets folder.
-app.use(express.static('./assets'));
+app.use(express.static(path.resolve((__dirname),'assets')));
 
 // Setting up the view engine
 app.set('view engine','ejs');
-app.set('views','./views');
+app.set('views',path.resolve((__dirname),'views'));
 
 app.use(expressLayout);
 
